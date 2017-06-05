@@ -38,14 +38,12 @@ public class HashSearch {
 			}//end for 
 			
 			//Ask if the user wishes to continue entering files
-			
-			
 			System.out.println("\nContinue entering files? Y/N");
 			String choice = fromKb.next();
 			if(choice.equalsIgnoreCase("N"))
 				ended = true; //end process and proceed to search if user enters N
-		}//end while
-		performSearch();
+			}//end while
+			performSearch();
 	}//end getFiles
 	
 	public void priorityResults(String input, List<SearchObject> myList){
@@ -75,8 +73,6 @@ public class HashSearch {
 				if(myMap.containsKey(splitEntry[0]))
 					priorityResults(inputsearchTerm, myMap.get(splitEntry[0]));
 			}//end if
-
-			
 			
 			for(int i = 0; i<searchTerms.length; i++){ //look through all words (split from space) in the search query
 				if(myMap.containsKey(searchTerms[i].toLowerCase())){
@@ -109,7 +105,6 @@ public class HashSearch {
 	public static void main(String[] args){
 		HashSearch mySearchProject = new HashSearch();
 		mySearchProject.runProgram();
-		long end = System.nanoTime();
 	}//end main
 	
 
